@@ -8,6 +8,7 @@ Resource            ../locators/common_components.resource
 
 
 *** Variables ***
+#   Valid Input Data
 ${First_Name_Farmer}        dfg  #AbdullahTest        #First Name required
 ${Last_Name_Farmer}         fdg  #Tester              #Last Name required
 ${National_ID}              #4569251239735       #National ID optional 13 digits
@@ -16,6 +17,11 @@ ${Village}                  #VillageTest         #Village Name optional
 ${Circle_Zone}              #ZoneTest            #Zone Name optional
 ${Internal_ID}              qwe123rty           #Enter the Internal ID required
 
+#   Invalid Input Data
+${Invalid_First_Name}       Luxman@123
+${Invalid_Last_Name}        123%Parshaat
+
+
 
 
 
@@ -23,6 +29,20 @@ ${Internal_ID}              qwe123rty           #Enter the Internal ID required
 Apply Default Wait
 	Sleep    5s
 
+#   Invalid Input Data Keywords
+I Enter the Invalid First Name
+	Sleep    3s
+	Press Keys       ${First_Name_Farmer_Path}      ${Invalid_First_Name}
+I Enter the Invalid Last Name
+	Sleep    3s
+	Press Keys       ${Last_Name_Farmer_Path}       ${Invalid_Last_Name}
+I Should see the Error Message
+	Element Should Be Visible       ${Invalid_Error_Msg_Farmer}
+	Click Element       ${Cancel_Button_Farmer}
+	Sleep    2s
+	Click Element       ${Confirm_Button_Farmer}
+
+#       Add the Farmer
 I Open the Farmers page from Portfolio Summary
 	#Wait Until Page Contains    ${PORTFOLIO_SUMMARY_MAIN_PAGE}
 	#Sleep    3s
@@ -68,6 +88,11 @@ I Click on the Submit Button
 	Sleep    3s
 I Should see the Added Farmer Name page
 	Wait Until Element Contains    4sec     2sec        New farmer added succesfully
+
+
+
+#       Edit the Added Farmer details
+I Click on Edit Icon
 
 
 

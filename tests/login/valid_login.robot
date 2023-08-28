@@ -25,6 +25,17 @@ TC_001: Logging in to the RicultX Site in English as Admin Should Show the Main 
     Then I Should See the Name of the Admin User
     #[Teardown]    Logout of RicultX
 
+
+Negative_TC_Add_Farmer
+	Given I Open The Farmers Page From Portfolio Summary
+	When I Click on Add Farmer
+	And I Enter The Invalid First Name
+	And I Enter The Invalid Last Name
+	Then I Should See The Error Message
+
+
+
+
 TC_002: Add a Farmer from Porfolio Summary Page
 	Apply Default Wait
 	Given I Open The Farmers Page From Portfolio Summary
@@ -41,6 +52,8 @@ TC_002: Add a Farmer from Porfolio Summary Page
 	And I Enter the Internal ID
 	And I Click On The Submit Button
 	Then I Should See The Added Farmer Name Page
+
+
 
 
 
