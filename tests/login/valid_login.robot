@@ -26,7 +26,7 @@ TC_001: Logging in to the RicultX Site in English as Admin Should Show the Main 
     #[Teardown]    Logout of RicultX
 
 
-Negative_TC_Add_Farmer
+TC_002: Negative_TC_Add_Farmer
 	Given I Open The Farmers Page From Portfolio Summary
 	When I Click on Add Farmer
 	And I Enter The Invalid First Name
@@ -36,7 +36,7 @@ Negative_TC_Add_Farmer
 
 
 
-TC_002: Add a Farmer from Porfolio Summary Page
+TC_003: Add a Farmer from Porfolio Summary Page
 	Apply Default Wait
 	Given I Open The Farmers Page From Portfolio Summary
 	When I Click on Add Farmer
@@ -53,7 +53,19 @@ TC_002: Add a Farmer from Porfolio Summary Page
 	And I Click On The Submit Button
 	Then I Should See The Added Farmer Name Page
 
-
+TC_004: Edit or Update the Added Farmer
+	Given I Open The Edit Screen
+	When I Enter the Updated First Name
+	And I Enter the Updated Last Name
+	And I Enter the Updated National ID
+	And I Enter the Updated Phone Number
+	And I Select The Updated Province
+	And I Select The Updated District
+	And I Select The Updated Town
+	And I Enter the Updated Village Name
+	And I Enter the Updated Circle Zone
+	And I Enter the Updated Internal ID
+	And I Click On The Submit Button
 
 
 

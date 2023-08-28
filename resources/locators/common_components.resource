@@ -40,5 +40,8 @@ ${Confirm_Button_Farmer}             xpath://div[contains(text(),'Confirm')]    
 
 #       Edit the Added Farrmer
 ${Edit_Icon_Farmer}                 xpath:/html/body/div[1]/div/div/div[1]/div/div[2]/div/div[1]/div[2]/div[2]/div[2]       #Press Edit Icon on added farmer page screen
+${Update_Select_Provice}            xpath://div[contains(text(),'Baluchistan')]         #Select Province
+${Update_Select_District}           xpath://div[contains(text(),'Quetta')]              #Select District
+${Update_Select_Town}               xpath://div[contains(text(),'Pashin')]              #Select Town
 
 

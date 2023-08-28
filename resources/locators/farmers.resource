@@ -8,7 +8,7 @@ Resource            ../locators/common_components.resource
 
 
 *** Variables ***
-#   Valid Input Data
+#           Valid Input Data
 ${First_Name_Farmer}        dfg  #AbdullahTest        #First Name required
 ${Last_Name_Farmer}         fdg  #Tester              #Last Name required
 ${National_ID}              #4569251239735       #National ID optional 13 digits
@@ -17,11 +17,18 @@ ${Village}                  #VillageTest         #Village Name optional
 ${Circle_Zone}              #ZoneTest            #Zone Name optional
 ${Internal_ID}              qwe123rty           #Enter the Internal ID required
 
-#   Invalid Input Data
+#           Invalid Input Data
 ${Invalid_First_Name}       Luxman@123
 ${Invalid_Last_Name}        123%Parshaat
 
-
+#           Edit Input Data Farmer
+${Update_First_Name}        Arslan
+${Update_Last_Name}         Khan
+${Update_National_ID}       2569421239735
+${Update_Phone_Number}      03028598741
+${Update_Village}           Pind
+${Update_Circle_zone}       Township
+${Update_Internal_ID}       asd543fgh
 
 
 
@@ -91,8 +98,45 @@ I Should see the Added Farmer Name page
 
 
 
-#       Edit the Added Farmer details
-I Click on Edit Icon
+#       Edit/Update the Added Farmer details
+I Open the Edit Screen
+	Click Element       ${Edit_Icon_Farmer}
+	Sleep    2s
+I Enter the Updated First Name
+	Sleep    3s
+	Press Keys        ${First_Name_Farmer_Path}     ${Update_First_Name}
+I Enter the Updated Last Name
+	Press Keys        ${Last_Name_Farmer_Path}      ${Update_Last_Name}
+I Enter the Updated National ID
+	Press Keys        ${National_ID_Path}       ${Update_National_ID}
+I Enter the Updated Phone Number
+	Press Keys        ${Phone_Number_Path}      ${Update_Phone_Number}
+I Select the Updated Province
+	Sleep    3s
+	Click Element    ${Province_Dropdown}
+	Sleep    2s
+	Click Element    ${Update_Select_Provice}
+I Select the Updated District
+	Sleep    3s
+	Click Element    ${District_Dropdown}
+	Sleep    4s
+	Click Element    ${Update_Select_District}
+I Select the Updated Town
+	Sleep    4s
+	Click Element    ${Town_Dropdown}
+	Sleep    4s
+	Click Element    ${Update_Select_Town}
+I Enter the Updated Village Name
+	Press Keys       ${Village_Path}        ${Update_Village}
+I Enter the Updated Circle Zone
+	Press Keys       ${Circle_Zone_Path}        ${Update_Circle_zone}
+I Enter the Updated Internal ID
+	Sleep    2s
+	Press Keys       ${Internal_ID_Path}        ${Update_Internal_ID}
+	Sleep    2s
+I Click on the Submit Button
+	Click Element    ${Submit_Button}
+	Sleep    3s
 
 
 
