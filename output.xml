@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20230827 10:42:53.949" rpa="false" schemaversion="4">
+<suite id="s1" name="Ricultx-Robot-Test-Poc-Main" source="C:\Users\abdullah\Downloads\ricultx-robot-test-poc-main">
+<suite id="s1-s1" name="Tests" source="C:\Users\abdullah\Downloads\ricultx-robot-test-poc-main\tests">
+<suite id="s1-s1-s1" name="Login" source="C:\Users\abdullah\Downloads\ricultx-robot-test-poc-main\tests\login">
+<suite id="s1-s1-s1-s1" name="Valid Login" source="C:\Users\abdullah\Downloads\ricultx-robot-test-poc-main\tests\login\valid_login.robot">
+<test id="s1-s1-s1-s1-t1" name="TC_002: Add a Farmer from Porfolio Summary Page" line="25">
+<kw name="Given I Open The Farmers Page From Portfolio Summary" library="farmers">
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230827 10:42:57.171" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230827 10:42:54.171" endtime="20230827 10:42:57.171"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLICK_FARMERS_SECTION}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230827 10:42:57.173" level="INFO">Clicking element 'xpath://body/div[@id='root']/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]'.</msg>
+<msg timestamp="20230827 10:42:57.174" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20230827 10:42:57.174" level="FAIL">No browser is open.</msg>
+<status status="FAIL" starttime="20230827 10:42:57.172" endtime="20230827 10:42:57.182"/>
+</kw>
+<status status="FAIL" starttime="20230827 10:42:54.170" endtime="20230827 10:42:57.182"/>
+</kw>
+<kw name="When I Click And Add Farmer" library="farmers">
+<status status="NOT RUN" starttime="20230827 10:42:57.184" endtime="20230827 10:42:57.184"/>
+</kw>
+<status status="FAIL" starttime="20230827 10:42:54.170" endtime="20230827 10:42:57.185">No browser is open.</status>
+</test>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230827 10:42:57.190" endtime="20230827 10:42:57.191"/>
+</kw>
+<doc>Test all the ways that the user can log in to RicultX:
+1. With either English, Thai, or Urdu language.
+2. With email and password.
+3. With phone number and OTP</doc>
+<status status="FAIL" starttime="20230827 10:42:53.977" endtime="20230827 10:42:57.191"/>
+</suite>
+<status status="FAIL" starttime="20230827 10:42:53.975" endtime="20230827 10:42:57.197"/>
+</suite>
+<status status="FAIL" starttime="20230827 10:42:53.973" endtime="20230827 10:42:57.202"/>
+</suite>
+<status status="FAIL" starttime="20230827 10:42:53.951" endtime="20230827 10:42:57.205"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Ricultx-Robot-Test-Poc-Main">Ricultx-Robot-Test-Poc-Main</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Tests">Ricultx-Robot-Test-Poc-Main.Tests</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="Login">Ricultx-Robot-Test-Poc-Main.Tests.Login</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1-s1" name="Valid Login">Ricultx-Robot-Test-Poc-Main.Tests.Login.Valid Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
