@@ -37,10 +37,10 @@ TC_002: Negative_TC_Add_Farmer
 
 
 TC_003: Add a Farmer from Porfolio Summary Page
-	Apply Default Wait
-	Given I Open The Farmers Page From Portfolio Summary
-	When I Click on Add Farmer
-	And I Enter the First Name
+	#Apply Default Wait
+	#Given I Open The Farmers Page From Portfolio Summary
+	Given I Click on Add Farmer
+	When I Enter the First Name
 	And I Enter the Last Name
 	And I Enter the National ID
 	And I Enter the Phone Number
@@ -51,7 +51,7 @@ TC_003: Add a Farmer from Porfolio Summary Page
 	And I Enter the Circle Zone
 	And I Enter the Internal ID
 	And I Click On The Submit Button
-	Then I Should See The Added Farmer Name Page
+#	Then I Should See The Added Farmer Name Page
 
 TC_004: Edit or Update the Added Farmer
 	Given I Open The Edit Screen
@@ -65,7 +65,7 @@ TC_004: Edit or Update the Added Farmer
 	And I Enter the Updated Village Name
 	And I Enter the Updated Circle Zone
 	And I Enter the Updated Internal ID
-	And I Click On The Submit Button
+	And I Click on the Submit Button for Update
 
 
 

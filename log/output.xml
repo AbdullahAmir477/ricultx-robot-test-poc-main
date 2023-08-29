@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20230828 19:32:40.166" rpa="false" schemaversion="4">
+<suite id="s1" name="Valid Login" source="C:\Users\abdullah\Downloads\ricultx-robot-test-poc-main\tests\login\valid_login.robot">
+<test id="s1-t1" name="TC_002: Negative_TC_Add_Farmer" line="29">
+<kw name="Given I Open The Farmers Page From Portfolio Summary" library="farmers">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLICK_FARMERS_SECTION}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230828 19:32:40.477" level="INFO">Clicking element 'xpath://body/div[@id='root']/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]'.</msg>
+<msg timestamp="20230828 19:32:40.480" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20230828 19:32:40.480" level="FAIL">No browser is open.</msg>
+<status status="FAIL" starttime="20230828 19:32:40.476" endtime="20230828 19:32:40.485"/>
+</kw>
+<status status="FAIL" starttime="20230828 19:32:40.476" endtime="20230828 19:32:40.485"/>
+</kw>
+<kw name="When I Click on Add Farmer" library="farmers">
+<status status="NOT RUN" starttime="20230828 19:32:40.485" endtime="20230828 19:32:40.485"/>
+</kw>
+<kw name="And I Enter The Invalid First Name" library="farmers">
+<status status="NOT RUN" starttime="20230828 19:32:40.485" endtime="20230828 19:32:40.486"/>
+</kw>
+<kw name="And I Enter The Invalid Last Name" library="farmers">
+<status status="NOT RUN" starttime="20230828 19:32:40.486" endtime="20230828 19:32:40.486"/>
+</kw>
+<kw name="Then I Should See The Error Message" library="farmers">
+<status status="NOT RUN" starttime="20230828 19:32:40.486" endtime="20230828 19:32:40.486"/>
+</kw>
+<status status="FAIL" starttime="20230828 19:32:40.475" endtime="20230828 19:32:40.486">No browser is open.</status>
+</test>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230828 19:32:40.487" endtime="20230828 19:32:40.487"/>
+</kw>
+<doc>Test all the ways that the user can log in to RicultX:
+1. With either English, Thai, or Urdu language.
+2. With email and password.
+3. With phone number and OTP</doc>
+<status status="FAIL" starttime="20230828 19:32:40.168" endtime="20230828 19:32:40.488"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Valid Login">Valid Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

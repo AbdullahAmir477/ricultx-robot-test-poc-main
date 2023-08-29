@@ -5,7 +5,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 6.1.1 (Python 3.11.4 on win32)" name="Generator">
+<meta content="Robot Framework 5.0.1 (Python 3.9.13 on win32)" name="Generator">
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKcAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAqAAAAAAAAAAAAAAAAAAAALIAAAD/AAAA4AAAANwAAADcAAAA3AAAANwAAADcAAAA3AAAANwAAADcAAAA4AAAAP8AAACxAAAAAAAAAKYAAAD/AAAAuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/AAAA/wAAAKkAAAD6AAAAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN8AAAD/AAAA+gAAAMMAAAAAAAAAAgAAAGsAAABrAAAAawAAAGsAAABrAAAAawAAAGsAAABrAAAADAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAIsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAANEAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAAAAAAAAMgAAADIAAAAyAAAAMgAAADIAAAAyAAAAMgAAADIAAAAFAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAADwAAAB8AAAAAAAAAGAAAABcAAAAAAAAAH8AAABKAAAAAAAAAAAAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAADCAAAA/wAAACkAAADqAAAA4QAAAAAAAAD7AAAA/wAAALAAAAAGAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAIwAAAP4AAAD/AAAA/wAAAGAAAAAAAAAAAAAAAMkAAAD/AAAAigAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAAAAAAAIAAAAcAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAA2gAAAP8AAAD7AAAAywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN4AAAD/AAAAqwAAAP8AAACvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALIAAAD/AAAAsgAAAAAAAAC5AAAA/wAAAMoAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMkAAAD/AAAAvAAAAAAAAAAAAAAAAAAAAKwAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAArQAAAAAAAAAAwAMAAIABAAAf+AAAP/wAAD/8AAAgBAAAP/wAAD/8AAA//AAAJIwAADHEAAA//AAAP/wAAB/4AACAAQAAwAMAAA==">
 <style media="all" type="text/css">
 /* Generic and misc styles */
@@ -560,9 +560,6 @@ function toggleSuite(suiteId) {
 }
 function toggleTest(testId) {
     toggleElement(testId, ['keyword']);
-    var test = window.testdata.findLoaded(testId);
-    if (test.status == "FAIL" || test.status == "SKIP")
-        expandFailed(test);
 }
 function toggleKeyword(kwId) {
     toggleElement(kwId, ['keyword']);
@@ -626,7 +623,7 @@ function loadAndExpandElementIds(ids) {
     }
 }
 function expandFailed(element) {
-    if (element.status == "FAIL" || (element.type == "test" && element.status == "SKIP")) {
+    if (element.status == "FAIL") {
         window.elementsToExpand = [element];
         window.expandDecider = function (e) {
             return e.status == "FAIL";
@@ -1358,7 +1355,7 @@ window.testdata = function () {
     var LEVELS = ['TRACE', 'DEBUG', 'INFO', 'WARN', 'ERROR', 'FAIL', 'SKIP'];
     var STATUSES = ['FAIL', 'PASS', 'SKIP', 'NOT RUN'];
     var KEYWORD_TYPES = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'ITERATION', 'IF', 'ELSE IF', 'ELSE', 'RETURN',
-                         'TRY', 'EXCEPT', 'FINALLY', 'WHILE', 'CONTINUE', 'BREAK', 'ERROR'];
+                         'TRY', 'EXCEPT', 'FINALLY', 'WHILE', 'CONTINUE', 'BREAK'];
     function addElement(elem) {
         if (!elem.id)
             elem.id = uniqueId();
@@ -1806,31 +1803,31 @@ function stopPropagation(event) {
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,0,[],[0,0,3254],[[4,5,6,0,[],[0,22,3229],[[7,8,9,0,[],[0,24,3222],[[10,11,12,13,[],[0,26,3214],[],[[14,0,0,[],[0,219,3015,15],[[0,16,17,0,0,0,0,0,[0,219,3012],[[0,18,19,0,20,21,0,0,[1,220,3000],[[3220,2,22]]],[0,23,24,0,25,26,0,0,[0,3221,10],[[3222,2,27],[3223,2,28],[3223,5,15]]]]],[0,29,17,0,0,0,0,0,[3,3233,0],[]]]]],[[2,30,24,0,31,0,0,0,[1,3239,1],[]]],[1,0,1,0]]],[],[],[1,0,1,0]]],[],[],[1,0,1,0]]],[],[],[1,0,1,0]];
+window.output["suite"] = [1,2,3,4,[],[0,0,207,5],[],[[6,0,0,[],[0,160,40,7],[[0,8,9,0,0,10,0,0,[0,164,25],[[0,11,0,0,0,12,0,0,[0,172,4],[[173,5,13]]],[0,14,0,0,0,0,0,0,[3,183,1],[]],[0,15,0,0,0,16,0,0,[3,188,0],[]]]],[0,17,18,0,0,0,0,0,[3,191,0],[]],[0,19,18,0,0,0,0,0,[3,192,1],[]],[0,20,18,0,0,0,0,0,[3,194,0],[]],[0,21,18,0,0,0,0,0,[3,195,1],[]],[0,22,18,0,0,0,0,0,[3,198,0],[]]]]],[[2,23,0,0,0,0,0,0,[0,206,1,24],[[206,5,24]]]],[1,0,1,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*Ricultx-Robot-Test-Poc-Main","*C:\\Users\\abdullah\\Downloads\\ricultx-robot-test-poc-main","*.","*Tests","*C:\\Users\\abdullah\\Downloads\\ricultx-robot-test-poc-main\\tests","*tests","*Login","*C:\\Users\\abdullah\\Downloads\\ricultx-robot-test-poc-main\\tests\\login","*tests/login","*Valid Login","*C:\\Users\\abdullah\\Downloads\\ricultx-robot-test-poc-main\\tests\\login\\valid_login.robot","*tests/login/valid_login.robot","*<p>Test all the ways that the user can log in to RicultX: 1. With either English, Thai, or Urdu language. 2. With email and password. 3. With phone number and OTP\x3c/p>","*TC_002: Add a Farmer from Porfolio Summary Page","*No browser is open.","*Given I Open The Farmers Page From Portfolio Summary","*farmers","*Sleep","*BuiltIn","*<p>Pauses the test executed for the given time.\x3c/p>","*3s","*Slept 3 seconds","*Click Element","*SeleniumLibrary","*<p>Click the element identified by <code>locator\x3c/code>.\x3c/p>","*${CLICK_FARMERS_SECTION}","eNpzzslMzs7MS1dIzUnNTc0rUVC3SVTIKEpNs1WqKEgsybDS10/KT6nUT8ksi3bITLFVL8rPL1GPBfMN8VBGUJ6SHVWMsdFPtItV1wMAbvU6wQ==","*Cannot capture screenshot because no browser is open.","*When I Click And Add Farmer","*Close All Browsers","*<p>Closes all open browsers and resets the browser cache.\x3c/p>"]);
+window.output["strings"] = window.output["strings"].concat(["*","*Valid Login","*c:\\Users\\abdullah\\Downloads\\ricultx-robot-test-poc-main\\tests\\login\\valid_login.robot","eNq1jEsOQEAQBa8i9uPtBRuuYC3NDCZpWqbH5/g+d7CrSipVUDIHN5bp6NnlAOocrbqgoN7uzDSjkXNlIasIftg5XiZIL9FEp9FsMpiF/IrXFCzTwwext93H2dem1a/7AlTdtLNJ4g==","*<p>Test all the ways that the user can log in to RicultX: 1. With either English, Thai, or Urdu language. 2. With email and password. 3. With phone number and OTP\x3c/p>","*Suite teardown failed:\nNo keyword with name 'Close All Browsers' found.","*TC_001: Logging in to the RicultX Site in English as Admin Should Show the Main Page","*No keyword with name 'Open Browser' found.\n\nAlso parent suite teardown failed:\nNo keyword with name 'Close All Browsers' found.","*Given I Open the RicultX Website","*common","*${WEBSITE_URL}, Chrome","*Open Browser","*${website_url}, ${browser}","*No keyword with name 'Open Browser' found.","*Maximize Browser Window","*Wait Until Page Contains Element","*${LANGUAGE_SELECT_DROPDOWN}","*When I Select the English Language","*login","*And I Choose to Login by Email","*And I Enter Valid Admin Email","*And I Enter Valid Admin Password","*Then I Should See the Name of the Admin User","*Close All Browsers","*No keyword with name 'Close All Browsers' found.","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"]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:00:03","fail":1,"label":"All Tests","pass":0,"skip":0}],[],[{"elapsed":"00:00:03","fail":1,"id":"s1","label":"Ricultx-Robot-Test-Poc-Main","name":"Ricultx-Robot-Test-Poc-Main","pass":0,"skip":0},{"elapsed":"00:00:03","fail":1,"id":"s1-s1","label":"Ricultx-Robot-Test-Poc-Main.Tests","name":"Tests","pass":0,"skip":0},{"elapsed":"00:00:03","fail":1,"id":"s1-s1-s1","label":"Ricultx-Robot-Test-Poc-Main.Tests.Login","name":"Login","pass":0,"skip":0},{"elapsed":"00:00:03","fail":1,"id":"s1-s1-s1-s1","label":"Ricultx-Robot-Test-Poc-Main.Tests.Login.Valid Login","name":"Valid Login","pass":0,"skip":0}]];
+window.output["stats"] = [[{"elapsed":"00:00:00","fail":1,"label":"All Tests","pass":0,"skip":0}],[],[{"elapsed":"00:00:00","fail":1,"id":"s1","label":"Valid Login","name":"Valid Login","pass":0,"skip":0}]];
 </script>
 <script type="text/javascript">
-window.output["errors"] = [];
+window.output["errors"] = [[46,4,25],[62,4,26],[118,4,27],[146,4,28]];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1693114973951;
+window.output["baseMillis"] = 1693222678608;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 3280;
+window.output["generated"] = 236;
 </script>
 <script type="text/javascript">
 window.output["expand_keywords"] = null;
 </script>
 <script type="text/javascript">
-window.settings = {"defaultLevel":"INFO","minLevel":"INFO","reportURL":"report.html","rpa":false,"splitLogBase":"log","title":""};
+window.settings = {"defaultLevel":"INFO","minLevel":"FAIL","reportURL":"report.html","rpa":false,"splitLogBase":"log","title":""};
 </script>
 <title></title>
 </head>
@@ -1931,8 +1928,8 @@ function makeElementVisible(id) {
         util.map(ids, expandElementWithId);
         if (ids.length) {
             expandFailed(window.testdata.findLoaded(util.last(ids)));
+            window.location.hash = '';
             window.location.hash = id;
-            document.getElementById(id).scrollIntoView();
             highlightLinkTarget();
         }
     });
