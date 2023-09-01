@@ -3,18 +3,21 @@ Documentation       DOM components that are available anywhere in the site.
 
 
 *** Variables ***
-${NAV_USER_FULL_NAME}       xpath:/html/body/div[1]/div/div/div[2]/div[1]/div/div[2]/div/div[1]/div[2]/div[1]
-${NAV_USER_ROLE}            xpath:/html/body/div[1]/div/div/div[2]/div[1]/div/div[2]/div/div[1]/div[2]/div[2]
-${NAV_USER_DROPDOWN}        xpath:/html/body/div[1]/div/div/div[2]/div[1]/div/div[2]/div/div[2]/div[1]
+${NAV_USER_FULL_NAME}               xpath:/html/body/div[1]/div/div/div[2]/div[1]/div/div[2]/div/div[1]/div[2]/div[1]
+${NAV_USER_ROLE}                    xpath:/html/body/div[1]/div/div/div[2]/div[1]/div/div[2]/div/div[1]/div[2]/div[2]
+${NAV_USER_DROPDOWN}                xpath:/html/body/div[1]/div/div/div[2]/div[1]/div/div[2]/div/div[2]/div[1]
 
-${LOGOUT_BUTTON}            xpath:/html/body/div[1]/div/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/div/div[4]/div[2]
+${LOGOUT_BUTTON}                    xpath:/html/body/div[1]/div/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/div/div[4]/div[2]
+
+${PORTFOLIO_SUMMARY_MAIN_PAGE}      xpath://body/div[@id='root']/div[1]/div[1]/div[1]/div[1]
+${CLICK_FARMERS_SECTION}            xpath://body/div[@id='root']/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]    # Click on Farmer tab from Portfolio Summary Page
+
+${ADD_FARMER_MAIN_PAGE}             xpath:/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]    # wait for main page
+${ADD_FARMER_BUTTON}                xpath:/html/body/div[1]/div/div/div[1]/div/div[1]/div    # //body/div[@id='root']/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]    #Click on the Add Farmer button
 
 
-${PORTFOLIO_SUMMARY_MAIN_PAGE}       xpath://body/div[@id='root']/div[1]/div[1]/div[1]/div[1]
-${CLICK_FARMERS_SECTION}        xpath://body/div[@id='root']/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]     #Click on Farmer tab from Portfolio Summary Page
-
-${ADD_FARMER_MAIN_PAGE}         xpath:/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]   #wait for main page
-${ADD_FARMER_BUTTON}            xpath:/html/body/div[1]/div/div/div[1]/div/div[1]/div  #//body/div[@id='root']/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]     #Click on the Add Farmer button
+${ADD_FARMER_MAIN_PAGE}             xpath:/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]   #wait for main page
+${ADD_FARMER_BUTTON}                xpath:/html/body/div[1]/div/div/div[1]/div/div[1]/div  #//body/div[@id='root']/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]     #Click on the Add Farmer button
 
 
 #       Add Farmers fields path
@@ -33,10 +36,12 @@ ${Circle_Zone_Path}                  xpath://body/div[@id='root']/div[1]/div[1]/
 ${Internal_ID_Path}                  xpath://body/div[@id='root']/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[16]/div[1]/div[2]/div[2]/input[1]      #Enter the Internal ID
 ${Submit_Button}                     xpath://div[contains(text(),'Submit')]        #Click on the Submit button
 
+
 #       For Negative Test Case Check Error Message when user enter Invalid Name (first+last)
 ${Invalid_Error_Msg_Farmer}          xpath://div[contains(text(),'Only alphabets are allowed for this field.')]     #Invalid error message path
 ${Cancel_Button_Farmer}              xpath://div[contains(text(),'Cancel')]   #Cancel button
 ${Confirm_Button_Farmer}             xpath://div[contains(text(),'Confirm')]        #Confirm button
+
 
 #       Edit the Added Farrmer
 ${Edit_Icon_Farmer}                  xpath:/html/body/div[1]/div/div/div[1]/div/div[2]/div/div[1]/div[2]/div[2]/div[2]       #Press Edit Icon on added farmer page screen
@@ -54,7 +59,3 @@ ${Add_Farmer_Button_Lable}           xpath:/html/body/div[1]/div/div/div[1]/div/
 
 #       Clear Text path
 ${Clear_First_Name}                  xpath:/html/body/div[1]/div/div/div[1]/div/div[2]/div/div/div[1]/div[3]/div/div[2]/div[2]/input
-
-
-
-
