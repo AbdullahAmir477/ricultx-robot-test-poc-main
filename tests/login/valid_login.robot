@@ -8,6 +8,7 @@ Library             SeleniumLibrary
 Resource            ../../resources/common.resource
 Resource            ../../resources/keywords/login.resource
 Resource            ../../resources/locators/farmers.resource
+Resource            ../../resources/locators/CropCycle.resource
 
 
 Suite Teardown      Close All Browsers
