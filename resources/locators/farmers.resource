@@ -119,7 +119,7 @@ I Enter the Updated National ID
     Wait Until Page Contains Element    ${National_ID_Path}
     Press Keys        ${National_ID_Path}       ${Update_National_ID}
 I Enter the Updated Phone Number
-        Wait Until Page Contains Element    ${Phone_Number_Path}
+    Wait Until Page Contains Element    ${Phone_Number_Path}
     Press Keys        ${Phone_Number_Path}      ${Update_Phone_Number}
 I Select the Updated Province
     Click Element    ${Province_Dropdown}
