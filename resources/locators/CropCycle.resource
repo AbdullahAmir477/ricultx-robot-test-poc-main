@@ -11,10 +11,10 @@ Resource            ../locators/common_components.resource
 *** Variables ***
 
 #   Ricult Home icon
-${Ricult_Home_Icon}         xpath:/html/body/div[1]/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/svg/path[1]
+#${Ricult_Home_Icon}         xpath:/html/body/div[1]/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/svg/path[1]
 
 #   Portfolio icon on Side bar
-${Portfolio_Side_bar}       xpath:/html/body/div[1]/div/div/div[2]/div[2]/div/div/div[1]/div[3]/div/div
+#${Portfolio_Side_bar}       xpath:/html/body/div[1]/div/div/div[2]/div[2]/div/div/div[1]/div[3]/div/div
 ${Crop_Cycle}               xpath://div[contains(text(),'Crop Cycle')]
 ${Add_Crop_Cycle_Button}    xpath:/html/body/div[1]/div/div/div[1]/div/div[1]/div
 ${Add_Crop_Cycle_Button_Path}   xpath:/html/body/div[1]/div/div/div[1]/div/div[1]/div/div/div[2]
@@ -53,7 +53,7 @@ ${Add_CropCycle}           xpath:/html/body/div[1]/div/div/div[1]/div/div[2]/div
 I Open the Home Dashboard Screen
     Click Element    ${Ricult_Home_Icon}
 I Open the Portfolio Side Bar
-    Click Element    ${Portfolio_Side_bar}
+    Click Element    ${Portfolio_Side_Bar}
 I Open the Crop Cycle Page Screen
     Click Element    ${Crop_Cycle}
 I Click on Add a Crop Cycle button

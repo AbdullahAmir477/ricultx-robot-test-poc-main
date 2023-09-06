@@ -12,7 +12,7 @@ Resource            ../locators/common_components.resource
 #    Valid Input Data
 ${First_Name_Farmer}        Abdullah   #First Name required
 ${Last_Name_Farmer}         Tester    #Last Name required
-${National_ID}              ${EMPTY}    # 4569251239735    #National ID optional 13 digits
+${National_ID}                  4569251239735    #National ID optional 13 digits
 ${Phone_Number}             ${EMPTY}    # 03017877265    #Phone Number optional
 ${Village}                  ${EMPTY}    # VillageTest    #Village Name optional
 ${Circle_Zone}              ${EMPTY}    # ZoneTest    #Zone Name optional

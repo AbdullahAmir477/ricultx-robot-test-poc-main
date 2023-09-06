@@ -59,3 +59,10 @@ ${Add_Farmer_Button_Lable}           xpath:/html/body/div[1]/div/div/div[1]/div/
 
 #       Clear Text path
 ${Clear_First_Name}                  xpath:/html/body/div[1]/div/div/div[1]/div/div[2]/div/div/div[1]/div[3]/div/div[2]/div[2]/input
+
+
+#   Ricult Home icon
+#${Ricult_Home_Icon}         xpath:/html/body/div[1]/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/svg/path[1]
+
+#   Portfolio icon on Side bar
+${Portfolio_Side_Bar}       xpath:/html/body/div[1]/div/div/div[2]/div[2]/div/div/div[1]/div[3]/div/div

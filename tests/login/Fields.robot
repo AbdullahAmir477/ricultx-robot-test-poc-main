@@ -1,15 +1,15 @@
 *** Settings ***
-Documentation       User can Add or Edit or Delete the Crop Cycle
+Documentation       User can Add the fields
 
 Library             SeleniumLibrary
 Resource            ../../resources/common.resource
 Resource            ../../resources/keywords/login.resource
 Resource            ../../resources/locators/farmers.resource
-Resource            ../../resources/locators/CropCycle.resource
+#Resource            ../../resources/locators/CropCycle.resource
+Resource            ../../resources/locators/Fields.resource
 
 
 Suite Teardown      Close All Browsers
-
 
 
 
@@ -24,18 +24,16 @@ TC_001: Logging in to the RicultX Site in English as Admin Should Show the Main 
     #[Teardown]    Logout of RicultX
 
 
-TC_002: Adding the Crop Cycle
+TC_002: Adding a Fields
     #Given I Open the Home Dashboard Screen
-    Given I Open the Portfolio Side Bar
-    And I Open the Crop Cycle Page Screen
-    When I Click on Add a Crop Cycle button
-    And I Select the Crop Type
-    And I Select Crop Variant
-    And I Select Plant Type
-    And I Enter the Area
-    And I Choose the Sowing Date
-    And I Select the Season
-    And I Select the Contract Type
-    And I Click on Add a CropCycle
+    Given I Open the Fields Page Screen
+    And I Open the Fields Screen
+    When I Click on Add a Field button
+    And I Click on Draw
+
+
+
+
+
 
 
