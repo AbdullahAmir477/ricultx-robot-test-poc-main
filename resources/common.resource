@@ -4,6 +4,7 @@ Documentation       Actions that can happen from anywhere within the flow.
 Library             SeleniumLibrary
 Resource            locators/login_page.resource
 Resource            locators/common_components.resource
+Resource            keywords/login.resource
 
 
 *** Variables ***
@@ -25,3 +26,11 @@ Logout of RicultX
     Wait Until Element Is Visible    ${LOGOUT_BUTTON}
     Click Element    ${LOGOUT_BUTTON}
     Wait Until Page Contains Element    ${LANGUAGE_SELECT_MAIN}
+
+Login as an Admin
+    I Open the RicultX Website    ${WEBSITE_URL}    Chrome
+    I Select the English Language
+    I Choose to Login by Email
+    I Enter Valid Admin Email
+    I Enter Valid Admin Password
+    I Should See the Name of the Admin User

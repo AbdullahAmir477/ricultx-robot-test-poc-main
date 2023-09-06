@@ -22,6 +22,3 @@ ${EMAIL_LOGIN_PASSWORD_INPUT_LABEL}     xpath:/html/body/div[1]/div/div/div[1]/d
 ${EMAIL_LOGIN_PASSWORD_TEXT_FIELD}      xpath:/html/body/div[1]/div/div/div[1]/div[2]/div/div[3]/div[1]/div[2]
 ${EMAIL_LOGIN_PASSWORD_INPUT}           xpath:/html/body/div[1]/div/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/input
 ${EMAIL_LOGIN_PASSWORD_CONTINUE}        xpath:/html/body/div[1]/div/div/div[1]/div[2]/div/div[3]/div[2]
-
-
-

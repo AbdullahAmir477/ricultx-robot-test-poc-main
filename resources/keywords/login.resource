@@ -5,12 +5,10 @@ Library             SeleniumLibrary
 Resource            ../common.resource
 Resource            ../locators/login_page.resource
 Resource            ../locators/common_components.resource
-Resource            ../locators/farmers.resource
-
+Resource            ../locators/home_page.resource
 
 
 *** Variables ***
-
 ${VALID_EMAIL_LOGIN_USERNAME}       abdullah.amir@ricult.com
 ${VALID_EMAIL_LOGIN_PASSWORD}       Hello@12345
 ${ADMIN_FULL_NAME}                  Abdullah QA
@@ -18,7 +16,6 @@ ${ADMIN_ROLE}                       Main Admin
 
 
 *** Keywords ***
-
 I Select the English Language
     Click Element    ${LANGUAGE_SELECT_DROPDOWN}
     Click Element    ${LANGUAGE_SELECT_ENGLISH}
@@ -43,8 +40,7 @@ I Enter Valid Admin Password
     Click Element    ${EMAIL_LOGIN_PASSWORD_CONTINUE}
 
 I Should See the Name of the Admin User
-    Wait Until Keyword Succeeds    4 sec    2 sec    Correct Admin User Name and Role is Shown
-
+    Wait Until Keyword Succeeds    8 sec    2 sec    Correct Admin User Name and Role is Shown
 
 Correct Admin User Name and Role is Shown
     Element Text Should Be    ${NAV_USER_FULL_NAME}    ${ADMIN_FULL_NAME}
