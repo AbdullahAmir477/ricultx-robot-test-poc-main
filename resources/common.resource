@@ -17,6 +17,7 @@ ${BROWSER}          Chrome
 I Open the RicultX Website
     [Arguments]    ${website_url}    ${browser}
     Open Browser    ${website_url}    ${browser}
+    #Open Browser    https://ricult-qa1.firebaseapp.com      Chrome
     Maximize Browser Window
     Wait Until Page Contains Element    ${LANGUAGE_SELECT_DROPDOWN}
 

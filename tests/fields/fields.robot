@@ -2,12 +2,12 @@
 Documentation       User can Add the fields
 
 Library             SeleniumLibrary
+Library             lib/Map.py
 Resource            ../../resources/common.resource
 Resource            ../../resources/keywords/login.resource
-Resource            ../../resources/locators/farmers.resource
-#Resource            ../../resources/locators/CropCycle.resource
-Resource            ../../resources/locators/Fields.resource
-
+# Resource    ../../resources/keywords/farmers.resource
+# Resource    ../../resources/locators/CropCycle.resource
+Resource            ../../resources/locators/fields.resource
 
 Suite Teardown      Close All Browsers
 
@@ -21,19 +21,15 @@ TC_001: Logging in to the RicultX Site in English as Admin Should Show the Main 
     And I Enter Valid Admin Email
     And I Enter Valid Admin Password
     Then I Should See the Name of the Admin User
-    #[Teardown]    Logout of RicultX
-
+    # [Teardown]    Logout of RicultX
 
 TC_002: Adding a Fields
-    #Given I Open the Home Dashboard Screen
+    # Given I Open the Home Dashboard Screen
     Given I Open the Fields Page Screen
     And I Open the Fields Screen
     When I Click on Add a Field button
     And I Click on Draw
-
-
-
-
-
-
-
+    And I Automate the Map
+    And I Select a Farmer
+    And I Enter the Village
+    And I Click on the Submit button

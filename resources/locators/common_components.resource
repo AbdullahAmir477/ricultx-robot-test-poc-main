@@ -50,31 +50,26 @@ ${Update_Submit_Button}             xpath://div[contains(text(),'Submit')]    # 
 ${Confirm_Button_Lable}             xpath:/html/body/div[11]/div/div[2]/div/div/div[2]/div/div[2]/div[2]/div
 ${Add_Farmer_Button_Lable}          xpath:/html/body/div[1]/div/div/div[1]/div/div[1]/div/div/div[2]
 
-${Invalid_Error_Msg_Farmer}          xpath://div[contains(text(),'Only alphabets are allowed for this field.')]     #Invalid error message path
-${Cancel_Button_Farmer}              xpath://div[contains(text(),'Cancel')]   #Cancel button
-${Confirm_Button_Farmer}             xpath://div[contains(text(),'Confirm')]        #Confirm button
+${Invalid_Error_Msg_Farmer}         xpath://div[contains(text(),'Only alphabets are allowed for this field.')]    # Invalid error message path
+${Cancel_Button_Farmer}             xpath://div[contains(text(),'Cancel')]    # Cancel button
+${Confirm_Button_Farmer}            xpath://div[contains(text(),'Confirm')]    # Confirm button
 
+#    Edit the Added Farrmer
+${Edit_Icon_Farmer}                 xpath:/html/body/div[1]/div/div/div[1]/div/div[2]/div/div[1]/div[2]/div[2]/div[2]    # Press Edit Icon on added farmer page screen
+${Update_Select_Provice}            xpath://div[contains(text(),'Baluchistan')]    # Select Province
+${Update_Select_District}           xpath://div[contains(text(),'Quetta')]    # Select District
+${Update_Select_Town}               xpath://div[contains(text(),'Pashin')]    # Select Town
+${Update_Submit_Button}             xpath://div[contains(text(),'Submit')]    # Click on the Submit button
 
-#       Edit the Added Farrmer
-${Edit_Icon_Farmer}                  xpath:/html/body/div[1]/div/div/div[1]/div/div[2]/div/div[1]/div[2]/div[2]/div[2]       #Press Edit Icon on added farmer page screen
-${Update_Select_Provice}             xpath://div[contains(text(),'Baluchistan')]         #Select Province
-${Update_Select_District}            xpath://div[contains(text(),'Quetta')]              #Select District
-${Update_Select_Town}                xpath://div[contains(text(),'Pashin')]              #Select Town
-${Update_Submit_Button}              xpath://div[contains(text(),'Submit')]        #Click on the Submit button
+#    Wait Locators
+${Confirm_Button_Lable}             xpath:/html/body/div[11]/div/div[2]/div/div/div[2]/div/div[2]/div[2]/div
+${Add_Farmer_Button_Lable}          xpath:/html/body/div[1]/div/div/div[1]/div/div[1]/div/div/div[2]
 
+#    Clear Text path
+${Clear_First_Name}                 xpath:/html/body/div[1]/div/div/div[1]/div/div[2]/div/div/div[1]/div[3]/div/div[2]/div[2]/input
 
-#       Wait Locators
-${Confirm_Button_Lable}              xpath:/html/body/div[11]/div/div[2]/div/div/div[2]/div/div[2]/div[2]/div
-${Add_Farmer_Button_Lable}           xpath:/html/body/div[1]/div/div/div[1]/div/div[1]/div/div/div[2]
+#    Ricult Home icon
+# ${Ricult_Home_Icon}    xpath:/html/body/div[1]/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/svg/path[1]
 
-
-
-#       Clear Text path
-${Clear_First_Name}                  xpath:/html/body/div[1]/div/div/div[1]/div/div[2]/div/div/div[1]/div[3]/div/div[2]/div[2]/input
-
-
-#   Ricult Home icon
-#${Ricult_Home_Icon}         xpath:/html/body/div[1]/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/svg/path[1]
-
-#   Portfolio icon on Side bar
-${Portfolio_Side_Bar}       xpath:/html/body/div[1]/div/div/div[2]/div[2]/div/div/div[1]/div[3]/div/div
+#    Portfolio icon on Side bar
+${Portfolio_Side_Bar}               xpath:/html/body/div[1]/div/div/div[2]/div[2]/div/div/div[1]/div[3]/div/div
