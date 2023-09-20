@@ -3,7 +3,7 @@ Documentation       User can Add the fields
 
 Library             SeleniumLibrary
 Library             Collections
-Library             lib/Map.py
+Library             Map
 Resource            ../common.resource
 Resource            ../locators/login_page.resource
 Resource            ../locators/common_components.resource
@@ -23,8 +23,9 @@ ${Submit Button}            xpath://div[contains(text(),'Submit')]
 
 ${Ricult_Home_Icon}         xpath:/html/body/div[1]/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/svg/path[1]
 
-${element} =    Wait Until Element Is Visible    ${locator}     timeout=10s
+${element} =                Wait Until Element Is Visible    ${locator}    timeout=10s
 ${locator}                  xpath:/html[1]/body[1]/div[4]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]
+
 
 *** Keywords ***
 # I Open the Home Dashboard Screen
@@ -33,7 +34,15 @@ ${locator}                  xpath:/html[1]/body[1]/div[4]/div[1]/div[2]/div[1]/d
 #    Click Element    ${Portfolio_Side_Bar}
 
 I Open the Fields Page Screen
+    I am on the Home Page
     Click Element    ${Side_Bar}
+
+I am on the Home Page
+    Wait Until Keyword Succeeds    8 sec    2 sec    Correct Admin User Name and Role is Shown
+
+Correct Admin User Name and Role is Shown
+    Element Text Should Be    ${NAV_USER_FULL_NAME}    ${ADMIN_FULL_NAME}
+    Element Text Should Be    ${NAV_USER_ROLE}    ${ADMIN_ROLE}
 
 I Open the Fields Screen
     Click Element    ${Open_Fields_Screen}
@@ -46,17 +55,10 @@ I Click on Draw
     Click Element    ${Draw_a_Field}
     Sleep    5s
     Click Element    ${Add_Draw_Point}
-    Sleep    3s
+    Sleep    5s
 
-
-#I Automate the Map
-#    [Arguments]     ${self}
-#    ${driver}   Get Library Instance    SeleniumLibrary
-#    ${add_point_element}=  Wait Until Element Is Visible  xpath://div[contains(text(),'Add a point')]
-#    Click Element  ${add_point_element}
-
-
-#I Automate the Map
+# I Automate the Map    ${Add_Draw_Point}
+# I Automate the Map
 #    ${element} =    Wait Until Element Is Visible    xpath://div[contains(text(),'Add a point')]
 #    Click Element    ${element}
 #    #Wait Until Element Is Visible

@@ -2,6 +2,7 @@
 Documentation       Actions that can happen from anywhere within the flow.
 
 Library             SeleniumLibrary
+Library             WebDriverFactory
 Resource            locators/login_page.resource
 Resource            locators/common_components.resource
 Resource            keywords/login.resource
@@ -17,7 +18,7 @@ ${BROWSER}          Chrome
 I Open the RicultX Website
     [Arguments]    ${website_url}    ${browser}
     Open Browser    ${website_url}    ${browser}
-    #Open Browser    https://ricult-qa1.firebaseapp.com      Chrome
+    # Open Browser    https://ricult-qa1.firebaseapp.com    Chrome
     Maximize Browser Window
     Wait Until Page Contains Element    ${LANGUAGE_SELECT_DROPDOWN}
 
@@ -35,3 +36,15 @@ Login as an Admin
     I Enter Valid Admin Email
     I Enter Valid Admin Password
     I Should See the Name of the Admin User
+
+I Open the RicultX Website in Chrome in a Container
+    [Documentation]    Opens Chrome using custom options when running tests in
+    ...    an environment that doesn't support browser GUI. (e.g.in a container).
+    [Arguments]    ${website_url}
+    # ${chrome_options}=    Get Chrome Options
+    ${chrome_service}=    Get Chrome Driver Service
+    # Create Webdriver    Chrome    service=${chrome_service}    options=${chrome_options}
+    Create Webdriver    Chrome    service=${chrome_service}
+    Go to    ${website_url}
+    Maximize Browser Window
+    Wait Until Page Contains Element    ${LANGUAGE_SELECT_DROPDOWN}
