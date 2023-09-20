@@ -49,7 +49,13 @@ I Click on Draw
     Sleep    3s
 
 
-#I Automate the Map    ${Add_Draw_Point}
+#I Automate the Map
+#    [Arguments]     ${self}
+#    ${driver}   Get Library Instance    SeleniumLibrary
+#    ${add_point_element}=  Wait Until Element Is Visible  xpath://div[contains(text(),'Add a point')]
+#    Click Element  ${add_point_element}
+
+
 #I Automate the Map
 #    ${element} =    Wait Until Element Is Visible    xpath://div[contains(text(),'Add a point')]
 #    Click Element    ${element}
