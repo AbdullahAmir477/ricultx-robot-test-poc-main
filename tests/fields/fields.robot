@@ -2,7 +2,7 @@
 Documentation       User can Add the fields
 
 Library             SeleniumLibrary
-Library             lib/Map.py
+Library             Map
 Resource            ../../resources/common.resource
 Resource            ../../resources/keywords/login.resource
 # Resource    ../../resources/keywords/farmers.resource
@@ -10,7 +10,6 @@ Resource            ../../resources/keywords/login.resource
 Resource            ../../resources/locators/fields.resource
 
 Suite Teardown      Close All Browsers
-
 
 
 *** Test Cases ***
@@ -25,6 +24,12 @@ TC_001: Logging in to the RicultX Site in English as Admin Should Show the Main 
 
 TC_002: Adding a Fields
     # Given I Open the Home Dashboard Screen
+    # Given I Open the RicultX Website    ${WEBSITE_URL}    Chrome
+    Given I Open the RicultX Website in Chrome in a Container    ${WEBSITE_URL}
+    When I Select the English Language
+    And I Choose to Login by Email
+    And I Enter Valid Admin Email
+    And I Enter Valid Admin Password
     Given I Open the Fields Page Screen
     And I Open the Fields Screen
     When I Click on Add a Field button
