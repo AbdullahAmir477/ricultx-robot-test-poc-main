@@ -2,7 +2,7 @@
 Documentation       Actions that can happen from anywhere within the flow.
 
 Library             SeleniumLibrary
-Library             WebDriverFactory
+#Library             WebDriverFactory
 Resource            locators/login_page.resource
 Resource            locators/common_components.resource
 Resource            keywords/login.resource

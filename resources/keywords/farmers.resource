@@ -5,6 +5,7 @@ Library             SeleniumLibrary
 Resource            ../common.resource
 Resource            ../locators/login_page.resource
 Resource            ../locators/common_components.resource
+Resource            ../locators/farmers_locators.resource
 
 
 *** Variables ***
@@ -33,6 +34,57 @@ ${Update_Internal_ID}       asd543fgh
 
 
 *** Keywords ***
+#   Check the Filters on portfolio listing page
+I Click on the Filter Button
+    Wait Until Page Contains Element    ${filters_button}
+    Click Element    ${filters_button}
+    
+I Apply Some Filters
+    Wait Until Page Contains Element    ${season_range}
+    Click Element    ${season_range}
+    Wait Until Page Contains Element    ${sugarcane_filter}
+    Click Element    ${sugarcane_filter}
+    Wait Until Page Contains Element    ${apply_filter_button}
+    Click Element    ${apply_filter_button}
+    
+I Clear the Filters
+    Sleep    5s
+    Wait Until Page Contains Element    ${filters_button}
+    Click Element    ${filters_button}
+    Sleep    4s
+    Wait Until Page Contains Element    ${clear_filter_button}
+    Click Element    ${clear_filter_button}
+    Sleep    5s
+
+
+#   Search the Farmer by entering the ID
+I Enter the Farmer ID for Search the Farmer
+    Wait Until Element Contains    ${farmer_title_name}    Farmers
+    Click Element    ${farmers_search_bar}
+    Press Keys      ${farmers_search_bar}       ${farmer_search_input}
+    Sleep    7s
+    Wait Until Page Contains Element    ${search_result_click}
+    Click Element    ${search_result_click}
+    Sleep    5s
+    Click Element    ${search_cross_icon}
+    Sleep    3s
+
+#   Click on any farmer for view the preview detail
+I Click on the Farmer to see the Preview
+    Wait Until Page Contains Element    ${click_first_listing_farmer}
+    Click Element    ${click_first_listing_farmer}
+    Wait Until Page Contains Element    ${preview_detail_visible}
+    Click Element    ${preview_edit_button}
+    Wait Until Page Contains Element    ${preview_detail_page_cancel_button}
+    Click Element    ${preview_detail_page_cancel_button}
+    Wait Until Page Contains Element    ${confirm_button_farmer_edit_detail}
+    Click Element    ${confirm_button_farmer_edit_detail}
+    Sleep    3s
+
+
+
+
+
 #    Invalid Input Data Keywords
 I Enter the Invalid First Name
     Wait Until Page Contains Element    ${First_Name_Farmer_Path}
@@ -105,6 +157,7 @@ I Click on the Submit Button
     Wait Until Page Contains Element    ${Edit_Icon_Farmer}
 # I Should see the Added Farmer Name page
 #    Wait Until Element Contains    4sec    2sec    New farmer added succesfully
+
 
 #    Edit/Update the Added Farmer details
 
